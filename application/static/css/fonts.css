@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lobster'), local('Lobster-Regular'), url(../fonts/lobster.ttf) format('truetype');
+}
+
+.lobster-font {
+    font-family: 'Lobster', cursive;
+}

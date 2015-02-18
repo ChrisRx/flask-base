@@ -1,0 +1,42 @@
+# Flask template
+# --------------
+
+# Deployment
+gevent>=1.0
+Flask-Script>=0.6.7
+
+# Flask
+Flask>=0.10.1
+MarkupSafe>=0.19
+Werkzeug>=0.9.4
+Jinja2>=2.7.2
+itsdangerous>=0.24
+
+# Database
+Flask-SQLAlchemy>=1.0
+SQLAlchemy>=0.9.3
+
+# Migrations
+Flask-Migrate>=1.2.0
+
+# Forms
+Flask-WTF>=0.9.5
+WTForms>=2.0
+
+# Auth
+Flask-Login>=0.2.10
+Flask-Principal>=0.4.0
+
+# Email
+Flask-Mail>=0.9.0
+
+# Caching
+Flask-Cache>=0.13.1
+
+# REST
+Flask-Restless==0.14.2
+
+#Other
+Flask-Assets>=0.9
+jsmin>=2.0.11
+cssutils>=1.0

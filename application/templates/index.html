@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block head_css %}
+{% endblock %}
+
+{% block body_content %}
+<div class="container">
+  <div class="section">
+
+    <div class="card-panel card-loading">
+      <div class="progress preloader red lighten-2">
+        <div class="indeterminate red darken-3"></div>
+      </div>
+      <div class="row valign-wrapper preloader">
+        <div class="col s12 m12 l12">
+          <p class="flow-text lobster-font red-text text-lighten-1 bold center-align">Loading...</p>
+        </div>
+      </div>
+
+      <div class="content" style="padding:20px;">
+        <datatable></datatable>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+{% endblock %}
+
+{% block body_js %}
+  <script type="text/javascript">
+    riot.mount('datatable', {
+      items: {{items|tojson}}
+    });
+
+    $(document).ready(function() {
+      $('.preloader').hide();
+      $('.content').addClass('fade-in');
+    });
+  </script>
+{% endblock %}

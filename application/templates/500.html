@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block head_css %}{% endblock %}
+
+{% block body_main %}
+<nav role="navigation" class="red-accent-1 z-depth-1">
+  <div class="container">
+    <div class="nav-wrapper">
+      <div class="row">
+        <a href="{{url_for('frontend.index')}}" class="brand-logo lobster-font">{{config.APP_TITLE}}</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="section">
+    <div class="card-panel">
+      <p class="flow-text">There was a problem in loading this page.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

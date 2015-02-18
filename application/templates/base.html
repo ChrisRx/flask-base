@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="{{url_for('static', filename='img/favicon.ico')}}" rel="shortcut icon" media="screen">
+  {% assets "css_all" %}
+      <link href="{{ASSET_URL}}" rel="stylesheet" media="screen">
+  {% endassets %}
+  {% assets "js_head" %}
+      <script type="text/javascript" src="{{ASSET_URL}}"></script>
+  {% endassets %}
+  {% block head_css %}{% endblock %}
+  {% block head_js %}{% endblock %}
+</head>
+<body>
+  {% block body_main %}
+    <main class="page-row page-row-expanded">
+      {% include 'includes/nav.html' %}
+        {% block body_content %}{% endblock %}
+    </main>
+    {% include "includes/footer.html" %}
+  {% endblock %}
+  {% assets "js_body" %}
+      <script type="text/javascript" src="{{ASSET_URL}}"></script>
+  {% endassets %}
+  {% assets "riot_js" %}
+      <script type="text/javascript" src="{{ASSET_URL}}"></script>
+  {% endassets %}
+  {% block body_js %}{% endblock %}
+  {% include 'includes/messages.html' %}
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.tooltipped').tooltip({"delay": 50});
+      $(".dropdown-button").dropdown({"hover": false});
+      $('.collapsible').collapsible();
+      $(".button-collapse").sideNav();
+      $('select').material_select();
+      $('.datepicker').pickadate();
+      $('ul.tabs').tabs();
+      $('.modal-trigger').leanModal();
+      $(window).resize(function() {
+        $(".dropdown-button").dropdown({"hover": false});
+      });
+    });
+  </script>
+</body>
+</html>

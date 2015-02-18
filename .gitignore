@@ -10,10 +10,10 @@ __pycache__/
 env/
 build/
 develop-eggs/
-dist/
+# dist/
 downloads/
 eggs/
-lib/
+# lib/
 lib64/
 parts/
 sdist/
@@ -52,3 +52,8 @@ docs/_build/
 
 # PyBuilder
 target/
+
+application/static/.webassets-cache
+application/static/js/dist/*.js
+application/data/*.db
+application/data/logs

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block head_css %}
+<style type="text/css">
+  body {
+    background-color: #fff;
+  }
+</style>
+{% endblock %}
+
+{% block body_main %}
+<nav role="navigation" class="red z-depth-1">
+  <div class="container">
+    <div class="nav-wrapper">
+      <div class="row">
+        <a href="{{url_for('frontend.index')}}" class="brand-logo lobster-font">{{config.APP_TITLE}}</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <form class="col s12 m4 offset-m4 l4 offset-l4" role="form" action="{{url_for('user.login')}}" method="POST" autocomplete="off">
+        {{form.csrf_token}}
+        <div class="row">
+          <div class="input-field col s12">
+            {{form.username(class="validate", style="-webkit-box-shadow: 0 0 0px 1000px white inset !important;")}}
+            {{form.username.label}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            {{form.password(class="validate", style="-webkit-box-shadow: 0 0 0px 1000px white inset !important;")}}
+            {{form.password.label}}
+          </div>
+        </div>
+        {{form.next}}
+        <button class="btn waves-effect waves-light red" type="submit" name="action">Submit
+          <i class="mdi-content-send right"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block body_js %}
+<script type="text/javascript">
+</script>
+{% endblock %}

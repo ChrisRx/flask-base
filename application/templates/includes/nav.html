@@ -1,0 +1,28 @@
+<ul id="dropdown1" class="dropdown-content">
+  {% if current_user.is_admin %}
+    <li><a class="grey-text" href="{{url_for('user.manage_users')}}">settings</a></li>
+  {% endif %}
+  <li><a class="grey-text" href="{{url_for('user.logout')}}">logout</a></li>
+</ul>
+<nav role="navigation" class="red darken-1 z-depth-1">
+  <div class="container">
+    <div class="nav-wrapper">
+      <div class="row">
+        <a href="{{url_for('frontend.index')}}" class="brand-logo lobster-font">{{config.APP_TITLE}}</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="{{url_for('frontend.index')}}">Link</a></li>
+          <li data-positions="bottom" data-tooltips="Options">
+            <a href="#!" data-activates="dropdown1" class="dropdown-button"><i class="mdi-navigation-more-vert"></i></a>
+          </li>
+        </ul>
+        <ul id="nav-mobile" class="side-nav">
+          <li><a href="{{url_for('frontend.index')}}">Link<i class="mdi-action-description left"></i></a></li>
+          <li data-positions="bottom" data-tooltips="Options">
+            <a href="#!" data-activates="dropdown1" class="dropdown-button">Settings<i class="mdi-action-settings left"></i></a>
+          </li>
+        </ul>
+        <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
+      </div>
+    </div>
+  </div>
+</nav>
